@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Function to copy files and directories with symlink support
+copy_with_symlinks() {
+    src="$1"
+    dest="$2"
+    
+    # Copy files and directories preserving symlinks
+    cp -a "$src" "$dest"
+    
+    if [ $? -eq 0 ]; then
+        echo "Files and directories copied successfully with symlink support."
+    else
+        echo "Error occurred during copying."
+    fi
+}
+
+# Example usage: Provide source and destination as arguments
+copy_with_symlinks "$1" "$2"
